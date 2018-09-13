@@ -233,6 +233,11 @@ var maps = {
       "id": 5,
       "name": "Spice Islands",
       "icon": "img/maps/spice.png"
+    },
+    {
+      "id": 6,
+      "name": "Downstream",
+      "icon": "img/maps/downstream.png"
     }
   ],
   "advanced": [

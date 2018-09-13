@@ -34,6 +34,13 @@ function randomizeTowerNumber(){
 	document.getElementById('support').value = supportTowerNumber;
 }
 
+function checkUncheck(boolean){
+	console.log(boolean);
+	for(i = 0; i < difficutiesArray.length; i++){
+		document.getElementById(difficutiesArray[i]).checked = boolean;
+	}
+}
+
 function randomizeChallenge(){
 	showChallenge(randomizeHero(),randomizeMap(),randomizeTowers(randomizeMode()),randomizeMode(),randomizeExtraRule());
 }
