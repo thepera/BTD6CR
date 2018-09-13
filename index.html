@@ -60,20 +60,24 @@
 				<button onclick='randomizeTowerNumber();' id='randomizeTowerValue' > Random towers number </button> 
 			</div>
 		</div>
-		 <!--Third column of the challenge generator-->
-		 <div id='thirdColumn' class='coloumn'>
-				
+		<!--Third column of the challenge generator. Content will be generate by JS-->
+		<div id='thirdColumn' class='coloumn'>
+			<div style='display:inline-block;'>
+				<button onclick='checkUncheck(true);'> Check all </button> 
+				<button onclick='checkUncheck(false);'> Uncheck all </button> 
+			</div>
 		</div>
-		 <div class='display' style='display:inline-block;'>
+		 <!--Button and extra rule div-->
+		<div class='display' style='display:inline-block;'>
 			<div>
 				<input type='checkbox' id='extraRule' name='extraRule' value='extraRule' />
 				<label> Extra Rule </label>
 				<button onclick='randomizeChallenge();' id='randomizeValue' > Randomize </button> 
+			</div>
 		</div>
+		 <!--Challenge data display. Generate by JS-->
+		<div id='challengeDisplay' class='display'>
 			
-		 </div>
-		 <div id='challengeDisplay' class='display'>
-			
-		 </div>
+		</div>
 	</body>
 </html>
