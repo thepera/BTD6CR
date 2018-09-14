@@ -4,6 +4,33 @@
 	width: 33%;
 	float: left;
 }
+.mapImg{
+	width: 20%;
+	z-index: 0;
+}
+.modeImg{
+	position:absolute;
+	width: 5%;
+	padding-right: 0;
+	padding-bottom: 0;
+	z-index:1;
+}
+.loadOutImg{
+	height: 15%;
+}
+.container{
+	display: inline-block;
+	margin: 0 auto;
+	text-align: left;
+}
+.container div {
+	width: auto;
+	height: 20px;
+}
+.container div input[type='number']{
+	float: right;
+	height: 20px;
+}
 .display
 {
 	margin-top: 20px;

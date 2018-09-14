@@ -21,7 +21,7 @@ var towers = {
     {
       "id": 3,
       "name": "Tack Shooter",
-      "icon": "img/monkeys/track.png",
+      "icon": "img/monkeys/tack.png",
       "camo": false
     },
     {
@@ -53,7 +53,7 @@ var towers = {
     {
       "id": 2,
       "name": "Monkey Buccaneer",
-      "icon": "img/monkeys/pirate.png",
+      "icon": "img/monkeys/buccaneer.png",
       "camo": true
     },
     {
@@ -146,7 +146,7 @@ var heroes = [
   },
   {
     "id": 4,
-    "name": "Captain Churchill",
+    "name": "Capitan Churchill",
     "icon": "img/heroes/churchill.png"
   },
   {
@@ -159,22 +159,22 @@ var maps = {
   "beginner": [
     {
       "id": 0,
-      "name": "Monkey Meadow",
+      "name": "Monkey meadow",
       "icon": "img/maps/meadow.png"
     },
     {
       "id": 1,
-      "name": "Tree Stump",
+      "name": "Tree stump",
       "icon": "img/maps/stump.png"
     },
     {
       "id": 2,
-      "name": "Town Center",
+      "name": "Town center",
       "icon": "img/maps/town.png"
     },
     {
       "id": 3,
-      "name": "In The Loop",
+      "name": "In the loop",
       "icon": "img/maps/loop.png"
     },
     {
@@ -184,7 +184,7 @@ var maps = {
     },
     {
       "id": 5,
-      "name": "Four Circles",
+      "name": "Four circles",
       "icon": "img/maps/circles.png"
     },
     {
@@ -194,7 +194,7 @@ var maps = {
     },
     {
       "id": 7,
-      "name": "End Of The Road",
+      "name": "End of the road",
       "icon": "img/maps/road.png"
     },
     {
@@ -206,7 +206,7 @@ var maps = {
   "intermediate": [
     {
       "id": 0,
-      "name": "Firing Range",
+      "name": "Firing range",
       "icon": "img/maps/range.png"
     },
     {
@@ -231,7 +231,7 @@ var maps = {
     },
     {
       "id": 5,
-      "name": "Spice Islands",
+      "name": "Spice islands",
       "icon": "img/maps/spice.png"
     },
     {
@@ -248,7 +248,7 @@ var maps = {
     },
     {
       "id": 1,
-      "name": "Off The Coast",
+      "name": "Off the coast",
       "icon": "img/maps/coast.png"
     },
     {
@@ -261,16 +261,22 @@ var maps = {
       "name": "Underground",
       "icon": "img/maps/underground.png"
     }
+    ,
+    {
+      "id": 4,
+      "name": "High finance",
+      "icon": "img/maps/finance.png"
+    }
   ],
   "expert": [
     {
       "id": 0,
-      "name": "Muddy Puddles",
+      "name": "Muddy puddles",
       "icon": "img/maps/mud.png"
     },
     {
       "id": 1,
-      "name": "#Ouch",
+      "name": "Ouch",
       "icon": "img/maps/ouch.png"
     }
   ]
@@ -279,76 +285,72 @@ var maps = {
 var difficulties = [
   {
     "id": 0,
-    "name": "easy",
-    "submodes": [
-      {
-        "id": 0,
-        "name": "Standard"
-      },
-      {
-        "id": 1,
-        "name": "Primary Only"
-      },
-      {
-        "id": 2,
-        "name": "Deflation"
-      }
-    ]
+    "name": "Easy",
+    "icon":  "img/mode/Easy.png"
   },
-  {
+ {
     "id": 1,
-    "name": "normal",
-    "submodes": [
-      {
-        "id": 0,
-        "name": "Standard"
-      },
-      {
-        "id": 1,
-        "name": "Military Only"
-      },
-      {
-        "id": 2,
-        "name": "Apocalypse"
-      },
-      {
-        "id": 3,
-        "name": "Reverse"
-      }
-    ]
+    "name": "Primary only",
+    "icon":  "img/mode/primary.png"
   },
   {
     "id": 2,
-    "name": "hard",
-    "submodes": [
-      {
-        "id": 0,
-        "name": "Standard"
-      },
-      {
-        "id": 1,
-        "name": "Magic Only"
-      },
-      {
-        "id": 2,
-        "name": "Double HP MOABs"
-      },
-      {
-        "id": 3,
-        "name": "Half Cash"
-      },
-      {
-        "id": 4,
-        "name": "Alternate Bloons Rounds"
-      },
-      {
-        "id": 5,
-        "name": "Impoppable"
-      },
-      {
-        "id": 6,
-        "name": "Chimps"
-      }
-    ]
-  }
+    "name": "Deflation",
+    "icon":  "img/mode/deflation.png"
+  },
+  {
+    "id": 3,
+    "name": "Normal",
+    "icon":  "img/mode/normal.png"
+  },
+  {
+    "id": 4,
+    "name": "Military Only",
+    "icon":  "img/mode/military.png"
+  },
+  {
+    "id": 5,
+    "name": "Apopalypse",
+    "icon":  "img/mode/apopalypse.png"
+  },
+  {
+    "id": 6,
+    "name": "Reverse",
+    "icon":  "img/mode/reverse.png"
+  },
+  {
+    "id": 7,
+    "name": "Hard",
+    "icon":  "img/mode/hard.png"
+  },
+  {
+    "id": 8,
+    "name": "Magic only",
+    "icon":  "img/mode/magic.png"
+  },
+  {
+    "id": 9,
+    "name": "Double HP MOABS",
+    "icon":  "img/mode/double.png"
+  },
+  {
+    "id": 10,
+    "name": "Half cash",
+    "icon":  "img/mode/half.png"
+  },
+  {
+    "id": 11,
+    "name": "Chimps",
+    "icon":  "img/mode/chimps.png"
+  },
+  {
+    "id": 12,
+    "name": "Alternate bloons rounds",
+    "icon":  "img/mode/alternate.png"
+  },
+  {
+    "id": 13,
+    "name": "Impoppable",
+    "icon":  "img/mode/impoppable.png"
+  },
 ];

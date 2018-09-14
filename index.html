@@ -6,66 +6,72 @@
 		<link rel="stylesheet" href="css/css.css">
 	</head>
 	<body>
-		<div style="position: absolute; left: 0; top: 0;"><a href="https://github.com/thepera/BTD6CR">Visit this project on GitHub</a></div>
+		<div style="position: absolute; left: 0; top: 0;">
+			<a href="https://github.com/thepera/BTD6CR">Visit this project on GitHub</a>
+		</div>
 		<div style='text-align:center'>
-		BTD6 challenge randomizer
+			BTD6 challenge randomizer
 		</div>
 		<!--First column of the challenge generator-->
 		<div class='coloumn'>
-		<div>
-			<label> Include hero: </label>
-			<div>
-				<select id='isHeroDesired'>
-					<option value='1' selected> Yes </option>
-					<option value='0'> No </option>
-				</select>
+			<div class="container">
+				<label> Include hero: </label>
+				<div>
+					<select id='isHeroDesired'>
+						<option value='1' selected> Yes </option>
+						<option value='0'> No </option>
+					</select>
+				</div>
+					<label> Map pool: </label>
+					<div>
+						<input type='checkbox' id='beginner' name='mapPool' value='beginner' checked/>
+						<label> Beginner </label>
+					</div>
+					<div>
+						<input type='checkbox' id='intermediate' name='mapPool' value='intermediate' checked/>
+						<label> Intermediate </label>
+					</div>
+					<div>
+						<input type='checkbox' id='advanced' name='mapPool' value='advanced' checked/>
+						<label> Advanced </label>
+					</div>
+					<div>
+						<input type='checkbox' id='expert' name='mapPool' value='expert' checked/>
+						<label> Expert </label>
+					</div>
+				</div>
 			</div>
-				<label> Map pool: </label>
-				<div>
-					<input type='checkbox' id='beginner' name='mapPool' value='beginner' checked/>
-					<label> Beginner </label>
-				</div>
-				<div>
-					<input type='checkbox' id='intermediate' name='mapPool' value='intermediate' checked/>
-					<label> Intermediate </label>
-				</div>
-				<div>
-					<input type='checkbox' id='advanced' name='mapPool' value='advanced' checked/>
-					<label> Advanced </label>
-				</div>
-				<div>
-					<input type='checkbox' id='expert' name='mapPool' value='expert' checked/>
-					<label> Expert </label>
-				</div>
-			</div>
-		</div>
 		 <!--Second column of the challenge generator-->
 		<div class='coloumn'>
-			<div>
-				<label> Primary towers: </label>
-				<input type='number' id='primary' min='0' max='6' value='1'/>
-			</div>
-			<div>
-				<label> Military towers: </label>
-				<input type='number' id='military' min='0' max='5' value='1'/>
-			</div>
-			<div>
-				<label> Magic towers: </label>
-				<input type='number' id='magic' min='0' max='5' value='1'/>
-			</div>
-			<div>
-				<label> Support towers: </label>
-				<input type='number' id='support' min='0' max='3' value='1'/>
-			</div>
-			<div>
-				<button onclick='randomizeTowerNumber();' id='randomizeTowerValue' > Random towers number </button> 
+			<div class="container">
+				<div>
+					<label> Primary towers: </label>
+					<input type='number' id='primary' min='0' max='6' value='1'/>
+				</div>
+				<div>
+					<label> Military towers: </label>
+					<input type='number' id='military' min='0' max='5' value='1'/>
+				</div>
+				<div>
+					<label> Magic towers: </label>
+					<input type='number' id='magic' min='0' max='5' value='1'/>
+				</div>
+				<div>
+					<label> Support towers: </label>
+					<input type='number' id='support' min='0' max='3' value='1'/>
+				</div>
+				<div>
+					<button onclick='randomizeTowerNumber();' id='randomizeTowerValue' > Random towers number </button> 
+				</div>
 			</div>
 		</div>
 		<!--Third column of the challenge generator. Content will be generate by JS-->
 		<div id='thirdColumn' class='coloumn'>
-			<div style='display:inline-block;'>
-				<button onclick='checkUncheck(true);'> Check all </button> 
-				<button onclick='checkUncheck(false);'> Uncheck all </button> 
+			<div id='thirdColumnContainer'class="container">
+				<div style='display:inline-block;'>
+					<button onclick='checkUncheck(true);'> Check all </button> 
+					<button onclick='checkUncheck(false);'> Uncheck all </button> 
+				</div>
 			</div>
 		</div>
 		 <!--Button and extra rule div-->

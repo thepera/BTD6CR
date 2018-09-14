@@ -1,4 +1,4 @@
-var difficutiesArray = ['easy','primary only', 'deflation','normal','military only','apocalypse', 'reverse','hard','magic only','double hp moab', 'half cash','alternate baloon rounds', 'impoppable', 'chimps'];
+//var difficuties = ['easy','primary only', 'deflation','normal','military only','apocalypse', 'reverse','hard','magic only','double hp moab', 'half cash','alternate baloon rounds', 'impoppable', 'chimps'];
 
 document.addEventListener("DOMContentLoaded", function(event) {
     generateDifficultiesList();
@@ -10,13 +10,12 @@ function renderTemplate(template,keyword){
 
 function generateDifficultiesList(){
 	var i;
-	var checkBoxList = '<div> <label>Difficulties:</label>';
+	var checkBoxList = '<div> <label>Difficulties:</label></div>';
 	const difficultDivTemplate= '<div> <input type="checkbox" id="{{data}}" checked/> <label> {{data}} </label> </div>';
-	for(i = 0; i < difficutiesArray.length; i++){
-	checkBoxList += renderTemplate(difficultDivTemplate,difficutiesArray[i]);
+	for(i = 0; i < difficulties.length; i++){
+	checkBoxList += renderTemplate(difficultDivTemplate,difficulties[i].name);
 	}
-	checkBoxList += '</div>';
-	document.getElementById('thirdColumn').insertAdjacentHTML('afterbegin', checkBoxList);
+	document.getElementById('thirdColumnContainer').insertAdjacentHTML('afterbegin', checkBoxList);
 }
 
 function randomizeTowerNumber(){
@@ -35,9 +34,8 @@ function randomizeTowerNumber(){
 }
 
 function checkUncheck(boolean){
-	console.log(boolean);
-	for(i = 0; i < difficutiesArray.length; i++){
-		document.getElementById(difficutiesArray[i]).checked = boolean;
+	for(i = 0; i < difficulties.length; i++){
+		document.getElementById(difficulties[i].name).checked = boolean;
 	}
 }
 
@@ -53,9 +51,9 @@ function showChallenge(hero,map,towers,mode,extra){
 	while (display.firstChild) {
 		display.removeChild(display.firstChild);
 	}
-	display.insertAdjacentHTML('beforeend','<div> NOTE: Challenge may not be possible </div>');
-	display.insertAdjacentHTML('beforeend','<div> Mode: ' + mode +' </div>');
-	display.insertAdjacentHTML('beforeend','<div> Map: ' + map +' </div>');
+	display.insertAdjacentHTML('beforeend','<div> NOTE: Challenge may not be possible </div><div id="imgDiv"></div>');
+	document.getElementById("imgDiv").insertAdjacentHTML('beforeend','<img class ="modeImg"src="img/mode/'+ mode + '.png" />');
+	document.getElementById("imgDiv").insertAdjacentHTML('beforeend','<img class ="mapImg" src="img/maps/'+ map + '.png" />');
 	if(extra){
 		display.insertAdjacentHTML('beforeend','<div> Rules: ' + extra +' </div>');
 		if(extra == '#FindACoolName'){
@@ -64,17 +62,18 @@ function showChallenge(hero,map,towers,mode,extra){
 			display.insertAdjacentHTML('beforeend','<p>' + explanation +' </p>');
 			}
 	}
-	if (hero){display.insertAdjacentHTML('beforeend','<div> Hero: ' + hero +' </div>');}
+	display.insertAdjacentHTML('beforeend','<div id="loadOut"></div>');
+	if (hero){document.getElementById("loadOut").insertAdjacentHTML('beforeend','<img class ="loadOutImg" src="img/heroes/'+ hero + '.png" />');}
 	
 	for (key in towers){
-		towersDiv += '<p>'+towers[key]+'</p>';
+		document.getElementById("loadOut").insertAdjacentHTML('beforeend','<img class="loadOutImg" src="img/monkeys/'+ towers[key] + '.png" />' );
+		//towersDiv += '<p>'++'</p>';
 	}
-	display.insertAdjacentHTML('beforeend','<div id="displayTowers"> Towers: ' + towersDiv + '</div>' );
+	
 }
 
 function randomizeHero(){
 	if(document.getElementById('isHeroDesired').value == 1){
-		console.log('HERO: ' + heroes[Math.floor(Math.random() * heroes.length)].name);
 		return heroes[Math.floor(Math.random() * heroes.length)].name;
 	}
 	
@@ -91,18 +90,16 @@ function randomizeMap(){
 			}
 		}
 	}
-	console.log('MAP: ' + mapPool[Math.floor(Math.random() * mapPool.length)]);
 	return mapPool[Math.floor(Math.random() * mapPool.length)];
 }
 
 function randomizeMode(){
 	var modePool = [];
-	for(i = 0; i < difficutiesArray.length; i++){
-		if(document.getElementById(difficutiesArray[i]).checked){
-			modePool.push(difficutiesArray[i]);
+	for(i = 0; i < difficulties.length; i++){
+		if(document.getElementById(difficulties[i].name).checked){
+			modePool.push(difficulties[i].name);
 		}
 	}
-	console.log('MODE: '+ modePool[Math.floor(Math.random() * modePool.length)]);
 	return modePool[Math.floor(Math.random() * modePool.length)];
 }
 
@@ -136,7 +133,6 @@ function randomizeTowers(mode){
 				}
 			}
 	}
-	console.log('tower: ' + towersArray + '----');
 	return towersArray;
 	
 }
